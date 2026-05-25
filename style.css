@@ -1,23 +1,32 @@
-body{
+*{
   margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
   height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  background:linear-gradient(135deg,#0f0f0f,#1a001f,#2d0036);
   overflow:hidden;
   font-family:sans-serif;
+  background:linear-gradient(-45deg,#0f0f0f,#2d0036,#ff0080,#1a001f);
+  background-size:400% 400%;
+  animation:bg 10s ease infinite;
   color:white;
 }
 
 .container{
   text-align:center;
-  animation:fade 2s ease;
+  z-index:2;
 }
 
 h1{
-  font-size:60px;
+  font-size:70px;
+  margin-bottom:20px;
   text-shadow:0 0 20px #ff4da6;
+  animation:glow 2s infinite alternate;
 }
 
 button{
@@ -29,22 +38,56 @@ button{
   font-size:20px;
   cursor:pointer;
   transition:0.3s;
-  box-shadow:0 0 20px #ff4da6;
+  box-shadow:0 0 25px #ff4da6;
 }
 
 button:hover{
   transform:scale(1.1);
-  box-shadow:0 0 40px #ff4da6;
+  box-shadow:0 0 50px #ff4da6;
 }
 
-@keyframes fade{
+body::before{
+  content:'';
+  position:absolute;
+  width:200%;
+  height:200%;
+  background:
+  radial-gradient(circle,#ffffff22 1px,transparent 1px);
+  background-size:50px 50px;
+  animation:move 20s linear infinite;
+}
+
+@keyframes bg{
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+}
+
+@keyframes glow{
   from{
-    opacity:0;
-    transform:translateY(30px);
+    text-shadow:0 0 10px #ff4da6;
   }
 
   to{
-    opacity:1;
+    text-shadow:0 0 30px #ff4da6,
+    0 0 60px #ff0080;
+  }
+}
+
+@keyframes move{
+  from{
     transform:translateY(0);
+  }
+
+  to{
+    transform:translateY(-200px);
   }
 }
