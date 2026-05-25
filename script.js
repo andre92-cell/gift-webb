@@ -4,10 +4,10 @@ const music = document.getElementById("music");
 
 giftBox.onclick = () => {
 
-  // play musik
+  // musik
   music.play();
 
-  // animasi buka
+  // animasi gift
   giftBox.classList.add("open");
 
   title.innerHTML = "Opening Surprise 💖";
@@ -18,7 +18,9 @@ giftBox.onclick = () => {
 
     <div class="surprise">
 
-      <h1>✨ Surprise ✨</h1>
+      <img src="foto.jpg" class="photo">
+
+      <h1>✨ For You ✨</h1>
 
       <p>
         Makasih udah hadir 💖
@@ -27,8 +29,6 @@ giftBox.onclick = () => {
     </div>
 
     `;
-
-    document.body.style.background = "black";
 
   },1000);
 
