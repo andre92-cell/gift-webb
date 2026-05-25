@@ -1,37 +1,35 @@
 const giftBox = document.getElementById("giftBox");
-const text = document.getElementById("text");
+const title = document.getElementById("title");
+const music = document.getElementById("music");
 
 giftBox.onclick = () => {
 
+  // play musik
+  music.play();
+
+  // animasi buka
   giftBox.classList.add("open");
 
-  text.innerHTML = "Hadiah terbuka 💖";
+  title.innerHTML = "Opening Surprise 💖";
 
   setTimeout(() => {
+
     document.body.innerHTML = `
-    
-    <div style="
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      flex-direction:column;
-      background:black;
-      color:white;
-      font-family:sans-serif;
-    ">
 
-      <h1 style="font-size:50px;">
-        Surprise ✨
-      </h1>
+    <div class="surprise">
 
-      <p style="margin-top:20px;font-size:22px;">
-        Kamu spesial 💖
+      <h1>✨ Surprise ✨</h1>
+
+      <p>
+        Makasih udah hadir 💖
       </p>
 
     </div>
 
     `;
-  }, 1000);
+
+    document.body.style.background = "black";
+
+  },1000);
 
 };
